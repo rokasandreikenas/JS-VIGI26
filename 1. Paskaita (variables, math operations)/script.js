@@ -11,4 +11,4 @@ let age;
 
 // Priskiriam kintamiejam reikšmes
 myName = "Rokas";
-age = 23;
+age = 24;
