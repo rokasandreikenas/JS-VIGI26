@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formos</title>
+    <style>
+      .field {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Salary Checker form</h1>
+    <form>
+      <div class="field">
+        <label for="workingField">Working field</label>
+        <select name="workingField">
+          <option value="management">Management</option>
+          <option value="it">IT</option>
+          <option value="construction">Construction</option>
+          <option value="pharmacy">Pharmacy</option>
+        </select>
+      </div>
+      <div>
+        <label for="position">Position</label>
+        <input type="text" name="position" required />
+      </div>
+      <div class="field">
+        <p><strong>Gender</strong></p>
+        <div>
+          <input type="radio" name="gender" value="female" required />
+          <label>Female</label>
+        </div>
+        <div>
+          <input type="radio" name="gender" value="male" required />
+          <label>Male</label>
+        </div>
+        <div>
+          <input type="radio" name="gender" value="other" required />
+          <label>Other</label>
+        </div>
+      </div>
+      <div class="field">
+        <label for="experience">Work experience</label>
+        <input type="number" name="experience" required />
+      </div>
+      <input type="submit" value="Check salaray" />
+    </form>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
