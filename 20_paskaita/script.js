@@ -62,7 +62,22 @@ const testString = "Rokas !@#$%^ Tomas 123";
 // patikrinti ar susideda is 3 skaiciu ir 2 raidziu
 // patikrinti ar turi tarpa
 
-const checkPostCode = (postCode) => {
+// const checkPostCode = (postCode) => {
+//   const letters = removeLettersFromArray(postCode.split(""));
+//   const numbers = removeNumbersFromArray(postCode.split(""));
+
+//   if (postCode.includes(" ")) {
+//     return false;
+//   } else if (letters.length === 5) {
+//     return true;
+//   } else if (letters.length === 2 && numbers.length === 3) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
+function checkPostCode(postCode) {
   const letters = removeLettersFromArray(postCode.split(""));
   const numbers = removeNumbersFromArray(postCode.split(""));
 
@@ -75,7 +90,7 @@ const checkPostCode = (postCode) => {
   } else {
     return false;
   }
-};
+}
 
 const code = "12345"; // true
 
