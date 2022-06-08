@@ -64,6 +64,8 @@ const renderUserCard = (user) => {
 
   // pakeisti street spalva i zalia
   // pakeisti email spalva i pilka
+  street.style.color = "green";
+  email.style.color = "grey";
 
   const card = document.createElement("div");
   card.className = "card";
@@ -76,9 +78,6 @@ fetch("https://jsonplaceholder.typicode.com/users/1")
   .then((resp) => resp.json())
   .then((response) => {
     renderUserCard(response);
-    // atvaizduoti userio name, username, email ir city html
-    // optional: ideti random nuotrauka i img taga
-    // console.log("user: ", response);
   })
   .catch((error) => {
     console.error(error, ": Failed to load user");
