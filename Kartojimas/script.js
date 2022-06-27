@@ -70,10 +70,20 @@
 //   console.log(char);
 // }
 
+// "rokas" => ["r", "o", "k", "a", "s"]
+// array.length
+// first item - [0],
+// last item - [array.length - 1]
+
 // for (let i = 0; i < myName.length; i++) {
 //   const char = myName[i];
 //   console.log(`${i + 1} raide yra ${char}`);
 // }
+
+// array.forEach(callback)
+// callback - (item, index) => {}
+//
+// array.forEach((item, index) => {})
 
 // Turi return
 
@@ -116,46 +126,123 @@
 
 // console.log(divide(28, 7));
 
-const myString = "Rokas, labadiena @@!@#123";
+// const myString = "Rokas, labadiena @@!@#123";
 
-function stringLength(string) {
-  return string.length;
+// function stringLength(string) {
+//   return string.length;
+// }
+
+// console.log(stringLength(myString));
+
+// function compareNumbers(num1, num2) {
+//   // return num1 > num2;
+//   // return num1 > num2 ? true : false;
+//   if (num1 > num2) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// console.log(compareNumbers(10, 5));
+
+// function firstAndLastChar(string) {
+//   // charAt
+//   // slice(-1)
+//   return string[0] + string[string.length - 1];
+// }
+
+// console.log(firstAndLastChar("Zveriukas"));
+
+// // Neturi return
+
+// function showMessage(message) {
+//   console.log(message);
+// }
+
+// // Neturi argumentu
+
+// function getRandomNumber() {
+//   return Math.random();
+// }
+
+// showMessage("Rokas");
+
+// console.log(getRandomNumber());
+
+const names = ["Rokas", "Tomas", "Giedrius", "Martyna"];
+
+function addNewStudent(studentName) {
+  names.unshift(studentName);
 }
 
-console.log(stringLength(myString));
-
-function compareNumbers(num1, num2) {
-  // return num1 > num2;
-  // return num1 > num2 ? true : false;
-  if (num1 > num2) {
-    return true;
-  } else {
-    return false;
-  }
+function removeStudent() {
+  names.shift();
 }
 
-console.log(compareNumbers(10, 5));
+// console.log(names);
 
-function firstAndLastChar(string) {
-  // charAt
-  // slice(-1)
-  return string[0] + string[string.length - 1];
+// addNewStudent("Antanas");
+
+// console.log(names);
+
+// removeStudent();
+
+// console.log(names);
+
+// array.push() - įstumia į galą
+// array.pop() - išmeta iš galo
+// array.unshift() - įstumia į priekį
+// array.shift() - išmeta iš priekio
+
+const colors = ["red", "blue", "green", "white", "black", "yellow", "purple"];
+
+function removeColors(colorArray) {
+  colorArray.pop(); // red blue green white black yellow
+  colorArray.shift(); // blue green white black yellow
+  colorArray.shift(); // green white black yellow
+  colorArray.shift(); // white black yellow
+  colorArray.shift(); // black yellow
+  colorArray.shift(); // yellow
+  colorArray.unshift("green"); // green yellow
 }
 
-console.log(firstAndLastChar("Zveriukas"));
+removeColors(colors);
 
-// Neturi return
+console.log(colors);
 
-function showMessage(message) {
-  console.log(message);
+function backToStartingArray() {
+  colors.push("purple"); // green yellow purple
+  colors.shift(); // yellow purple
+  colors.unshift("red", "blue", "green", "white", "black"); // red blue green white yellow purple
 }
 
-// Neturi argumentu
+backToStartingArray();
 
-function getRandomNumber() {
-  return Math.random();
+console.log(colors);
+
+function reverseArray(array) {
+  array.reverse();
 }
 
-showMessage("Rokas");
+reverseArray(colors);
 
-console.log(getRandomNumber());
+console.log(colors);
+
+colors.forEach((color) => {
+  console.log(color);
+});
+
+// colors.forEach(showColor);
+
+// function showColor(color) {
+//   console.log(color);
+// }
+
+function doubleArrayItem(array) {
+  return array.map((item) => item + item);
+}
+
+const doubledItems = doubleArrayItem(colors);
+console.log(doubledItems);
+console.log(colors);
