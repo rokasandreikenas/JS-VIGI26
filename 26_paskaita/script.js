@@ -1,6 +1,5 @@
-const renderCar = (user) => {
-  const brand = user.brand;
-  const model = user.model;
+const createCar = (car) => {
+  const { brand, model } = car;
 
   const tdBrand = document.createElement("td");
   const tdModel = document.createElement("td");
@@ -8,13 +7,13 @@ const renderCar = (user) => {
   tdBrand.textContent = brand;
   tdModel.textContent = model;
 
-  const trUser = document.createElement("tr");
-  trUser.append(tdBrand, tdModel);
+  const trCar = document.createElement("tr");
+  trCar.append(tdBrand, tdModel);
 
-  return trUser;
+  return trCar;
 };
 
-const renderTable = (users) => {
+const renderTable = (cars) => {
   const thBrand = document.createElement("th");
   const thModel = document.createElement("th");
 
@@ -31,7 +30,7 @@ const renderTable = (users) => {
 
   const tableBody = document.createElement("tbody");
 
-  users.forEach((user) => tableBody.append(renderCar(user)));
+  cars.forEach((car) => tableBody.append(createCar(car)));
 
   table.append(tableBody);
 
