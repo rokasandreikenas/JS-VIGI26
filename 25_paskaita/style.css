@@ -3,15 +3,9 @@ body {
 }
 
 .center {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 
@@ -20,38 +14,39 @@ body {
   min-height: 50vh;
   padding: 48px;
   background-color: white;
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .todo {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 16px;
 }
-
 .todo-title {
   font-size: 24px;
   margin: 0;
 }
-
 .todo-title.done {
   color: lightgray;
 }
-
+.todo-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.todo-delete {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+}
 .todo-status {
   padding: 12px;
   background-color: #aaaaaa;
   border-radius: 50%;
 }
-
 .todo-status.done {
   background-color: #22bb33;
 }
@@ -59,13 +54,11 @@ body {
 .todo-input {
   padding-top: 16px;
 }
-
 .todo-input input {
   padding: 8px;
   border-radius: 4px;
   border: 1px solid grey;
 }
-
 .todo-input .add-button {
   margin-left: 8px;
   padding: 9px 15px;
@@ -73,5 +66,4 @@ body {
   border: none;
   background-color: #24a0ed;
   color: white;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

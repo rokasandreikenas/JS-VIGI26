@@ -37,6 +37,20 @@ body {
     }
   }
 
+  &-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  &-delete {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+
   &-status {
     padding: 12px;
     background-color: $undone-color;
@@ -55,7 +69,6 @@ body {
     padding: 8px;
     border-radius: 4px;
     border: 1px solid grey;
-    // min-width: 200px;
   }
 
   .add-button {
