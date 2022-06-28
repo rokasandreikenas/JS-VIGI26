@@ -170,15 +170,15 @@
 
 // console.log(getRandomNumber());
 
-const names = ["Rokas", "Tomas", "Giedrius", "Martyna"];
+// const names = ["Rokas", "Tomas", "Giedrius", "Martyna"];
 
-function addNewStudent(studentName) {
-  names.unshift(studentName);
-}
+// function addNewStudent(studentName) {
+//   names.unshift(studentName);
+// }
 
-function removeStudent() {
-  names.shift();
-}
+// function removeStudent() {
+//   names.shift();
+// }
 
 // console.log(names);
 
@@ -195,43 +195,43 @@ function removeStudent() {
 // array.unshift() - įstumia į priekį
 // array.shift() - išmeta iš priekio
 
-const colors = ["red", "blue", "green", "white", "black", "yellow", "purple"];
+// const colors = ["red", "blue", "green", "white", "black", "yellow", "purple"];
 
-function removeColors(colorArray) {
-  colorArray.pop(); // red blue green white black yellow
-  colorArray.shift(); // blue green white black yellow
-  colorArray.shift(); // green white black yellow
-  colorArray.shift(); // white black yellow
-  colorArray.shift(); // black yellow
-  colorArray.shift(); // yellow
-  colorArray.unshift("green"); // green yellow
-}
+// function removeColors(colorArray) {
+//   colorArray.pop(); // red blue green white black yellow
+//   colorArray.shift(); // blue green white black yellow
+//   colorArray.shift(); // green white black yellow
+//   colorArray.shift(); // white black yellow
+//   colorArray.shift(); // black yellow
+//   colorArray.shift(); // yellow
+//   colorArray.unshift("green"); // green yellow
+// }
 
-removeColors(colors);
+// removeColors(colors);
 
-console.log(colors);
+// console.log(colors);
 
-function backToStartingArray() {
-  colors.push("purple"); // green yellow purple
-  colors.shift(); // yellow purple
-  colors.unshift("red", "blue", "green", "white", "black"); // red blue green white yellow purple
-}
+// function backToStartingArray() {
+//   colors.push("purple"); // green yellow purple
+//   colors.shift(); // yellow purple
+//   colors.unshift("red", "blue", "green", "white", "black"); // red blue green white yellow purple
+// }
 
-backToStartingArray();
+// backToStartingArray();
 
-console.log(colors);
+// console.log(colors);
 
-function reverseArray(array) {
-  array.reverse();
-}
+// function reverseArray(array) {
+//   array.reverse();
+// }
 
-reverseArray(colors);
+// reverseArray(colors);
 
-console.log(colors);
+// console.log(colors);
 
-colors.forEach((color) => {
-  console.log(color);
-});
+// colors.forEach((color) => {
+//   console.log(color);
+// });
 
 // colors.forEach(showColor);
 
@@ -239,10 +239,51 @@ colors.forEach((color) => {
 //   console.log(color);
 // }
 
-function doubleArrayItem(array) {
-  return array.map((item) => item + item);
+// function doubleArrayItem(array) {
+//   return array.map((item) => item + item);
+// }
+
+// const doubledItems = doubleArrayItem(colors);
+// console.log(doubledItems);
+// console.log(colors);
+
+const colors = ["red", "blue", "green", "white", "black", "yellow", "purple"];
+
+function removeGreenAndWhite(colorArray) {
+  const sliced = colorArray.slice(0, 2);
+  const sliced2 = colorArray.slice(-3);
+  const combine = sliced.concat(sliced2);
+  return combine;
 }
 
-const doubledItems = doubleArrayItem(colors);
-console.log(doubledItems);
-console.log(colors);
+const modifiedColors = removeGreenAndWhite(colors);
+
+function addOrange(colorArray) {
+  colorArray.splice(2, 1, "orange");
+}
+
+addOrange(modifiedColors);
+
+const hasEchar = modifiedColors.filter((color) => color.includes("e"));
+// "red".includes("e") => true
+// "blue".includes("e") => true
+console.log("hasEchar", hasEchar);
+
+const shorterThan4Chars = modifiedColors.filter((color) => color.length < 4);
+// "red".length < 4 => 3 < 4 => true
+// "blue".length < 4 => 4 < 4 => false
+// "orange".length < 4 => 6 < 4 => false
+console.log("shorter than 4 chars", shorterThan4Chars);
+
+const hasZChar = modifiedColors.some((color) => color.includes("z"));
+console.log("has Z char", hasZChar);
+// "red".includes("z") => false
+// "blue".includes("z") => false
+
+const hasBrownValue = modifiedColors.some((color) => color === "brown");
+console.log("has brown", hasBrownValue);
+
+const hasALetter = modifiedColors.filter((color) => color.includes("a"));
+const aLetterCount = hasALetter.length;
+
+console.log("has A letter", aLetterCount);
